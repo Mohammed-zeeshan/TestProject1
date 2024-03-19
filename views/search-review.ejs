@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback Form</title>
+  </head>
+  <body>
+    <h1>Company Review</h1>
+    <form action="/addreview" method="POST">
+      <div>
+        <label for="name">Company Name: </label>
+        <input type="text" name="name" id="name" required />
+      </div>
+      <div>
+        <label for="pros">Pros: </label>
+        <textarea name="pros" id="pros" cols="30" rows="5"></textarea>
+      </div>
+      <div>
+        <label for="cons">Cons: </label>
+        <textarea name="cons" id="cons" cols="30" rows="5"></textarea>
+      </div>
+      <div>
+        <label for="rating">Rate: </label>
+        <input type="number" name="rating" id="rating" min="1" max="5" />
+      </div>
+      <div><button type="submit">Submit</button></div>
+    </form>
+    <form action="/searchreview" method="POST">
+      <div>
+        <input type="text" name="searchname" id="searchname" required />
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+    <% if (reviews.length > 0) { %>
+    <ul>
+        <h3>Company Name: <%= reviews[0].name %></h3>
+        <h3>Company Rating: <%= avg%></h3>
+      <% for (let rev of reviews) { %>
+      <li id="<%= rev.id%>">
+        <label for="pros">Pros: </label>
+        <p><%= rev.pros %></p>
+        <label for="cons">Cons: </label>
+        <p><%= rev.cons %></p>
+      </li>
+      <%}%>
+    </ul>
+    <% } %>
+  </body>
+</html>

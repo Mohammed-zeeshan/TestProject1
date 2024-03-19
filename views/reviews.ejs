@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+</head>
+<body>
+    <h1>Company Review</h1>
+    <form action="/addreview" method="POST">
+        <div>
+            <label for="name">Company Name: </label>
+            <input type="text" name="name" id="name" required>
+        </div>
+        <div>
+            <label for="pros">Pros: </label>
+            <textarea name="pros" id="pros" cols="30" rows="5"></textarea>
+        </div>
+        <div>
+            <label for="cons">Cons: </label>
+            <textarea name="cons" id="cons" cols="30" rows="5"></textarea>
+        </div>
+        <div>
+            <label for="rating">Rate: </label>
+            <input type="number" name="rating" id="rating"  min="1" max="5">
+        </div>
+        <div><button type="submit">Submit</button></div>
+    </form>
+</body>
+</html>
